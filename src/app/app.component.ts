@@ -12,15 +12,15 @@ export class AppComponent {
   month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
-
   tasks: Task[] = [
     new Task('finish homework', 3),
     new Task('wash dog', 2),
     new Task('clean house', 2)
   ];
+  selectedTask: Task = this.tasks[0];
 
-  editTask() {
-    alert("edit that P.O.S.")
+  editTask(clickedTask) {
+    this.selectedTask = clickedTask;
   }
 
   priorityColor(currentTask){
