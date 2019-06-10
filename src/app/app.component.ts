@@ -14,8 +14,22 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
 
   tasks: Task[] = [
-    new Task('finish homework'),
-    new Task('wash dog'),
-    new Task('clean house')
+    new Task('finish homework', 3),
+    new Task('wash dog', 2),
+    new Task('clean house', 2)
   ];
+
+  editTask() {
+    alert("edit that P.O.S.")
+  }
+
+  priorityColor(currentTask){
+    if (currentTask.priority === 3){
+      return "bg-danger";
+    } else if (currentTask.priority === 2) {
+      return "bg-warning";
+    } else {
+      return "bg-info";
+    }
+  }
 }
