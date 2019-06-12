@@ -14,6 +14,15 @@ export class TaskListComponent {
   editButtonClicked(taskToEdit: Task) {
   this.clickSender.emit(taskToEdit);
 }
+onChange(optionFromMenu) {
+  this.filterByCompleteness = optionFromMenu;
+}
+
+toggleDone(clickedTask: Task, setCompleteness: boolean) {
+   clickedTask.done = setCompleteness;
+ }
+
+filterByCompleteness: string = "incompleteTasks"; //is this where it goes
 
   tasks: Task[] = [
     new Task('Finish weekend Angular homework for Epicodus course', 3),
